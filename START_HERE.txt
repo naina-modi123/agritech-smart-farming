@@ -1,0 +1,9 @@
+AGRITECH CAPSTONE — START HERE
+
+1. Extract this folder.
+2. Open the agritech-capstone folder in VS Code.
+3. Follow README.md exactly.
+4. Configure server/.env and client/.env from their .env.example files.
+5. Start MongoDB, then run the server and client in separate terminals.
+
+Do not upload .env files to GitHub.

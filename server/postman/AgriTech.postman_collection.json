@@ -1,0 +1,18 @@
+{
+  "info": {
+    "name": "AgriTech API",
+    "description": "Local API collection. Set baseUrl and token after logging in.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" },
+    { "key": "token", "value": "PASTE_JWT_HERE" }
+  ],
+  "item": [
+    { "name": "Health", "request": { "method": "GET", "url": "{{baseUrl}}/api/health" } },
+    { "name": "Register", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"name\":\"Demo Farmer\",\"email\":\"farmer@example.com\",\"password\":\"FarmerDemo123!\"}" }, "url": "{{baseUrl}}/api/auth/register" } },
+    { "name": "Login", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"email\":\"farmer@example.com\",\"password\":\"FarmerDemo123!\"}" }, "url": "{{baseUrl}}/api/auth/login" } },
+    { "name": "List farms", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/farms" } },
+    { "name": "Weather (Bhopal)", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/insights/weather?lat=23.2599&lon=77.4126" } }
+  ]
+}
